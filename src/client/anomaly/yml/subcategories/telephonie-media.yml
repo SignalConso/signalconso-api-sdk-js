@@ -37,14 +37,20 @@
                 - '21A'
               subcategories:
                 - title: Oui, j'ai été prévenu par email ou courrier
+                  ccrfCode:
+                    - '226'
                   information: !!import/single ../common/info/tel.yml
                 - title: Non, j'ai reçu seulement un sms
+                  ccrfCode:
+                    - '226'
                   reponseconsoCode:
                     - '421'
                     - '2202'
                   tags:
                     - LitigeContractuel
                 - title: Non, je n'ai rien reçu du tout
+                  ccrfCode:
+                    - '421'
                   reponseconsoCode:
                     - '421'
                   tags:
@@ -61,8 +67,12 @@
                   subcategoriesTitle: Avez-vous reçu un email ou un courrier pour vous prévenir ?
                   subcategories:
                     - title: Oui, j'ai été prévenu par email ou courrier
+                      ccrfCode:
+                        - '226'
                       information: !!import/single ../common/info/tel.yml
                     - title: Non, je n'ai rien reçu
+                      ccrfCode:
+                        - '421'
                       tags:
                         - LitigeContractuel
                       detailInputs:
@@ -74,6 +84,8 @@
                           type: TEXT
                           placeholder: "Indiquez l'intitulé figurant la facture"
                 - title: option liée à la musique, des livres, une chaine télé, un anti-virus
+                  ccrfCode:
+                    - '226'
                   reponseconsoCode:
                     - '421'
                   tags:
@@ -151,37 +163,40 @@
       subcategories:
         - title: Frais de résiliation
           ccrfCode:
-            - '21C'
+            - '21A'
           reponseconsoCode:
             - '477'
             - '473'
         - title: Restitution du matériel
           ccrfCode:
-            - '21C'
+            - '21A'
           reponseconsoCode:
             - '477'
             - '473'
         - title: Problème avec le RIO (Relevé d'Identité Opérateur)
           ccrfcode:
-            - '21C'
+            - '21A'
           reponseconsoCode:
             - '477'
         - title: Mon ancien opérateur continue de me prélever
+          ccrfCode:
+            - '23B'
           reponseconsoCode:
             - '474'
     - title: Appels, sms ou emails indésirables
       example: 'Exemple : spams, appel incessant, rappel vers un numéro payant'
       subcategories:
-        #- title: Je reçois des appels indésirables alors que je suis sur BlocTel
-        #  tags:
-        #    - ReponseConso
         - title: J'ai répondu à un sms ou j'ai rappelé un numéro qui était payant sans le savoir
           information: !!import/single ../common/info/called-paid-number.yml
         - title: Je reçois des spams dans mes emails
+          ccrfCode:
+            - '23b'
           reponseconsoCode:
             - '2207'
             - '2218'
         - title: J'ai eu un problème de démarchage téléphonique
+          ccrfCode:
+            - '227'
           reponseconsoCode:
             - '221'
           companyKind: PHONE
@@ -209,10 +224,14 @@
       subcategories:
         - title: Qualité du service client
           example: 'Exemple : pas de réponse du service client, service client payant'
+          ccrfCode:
+            - '23b'
           reponseconsoCode:
             - '466'
             - '467'
         - title: Téléphone acheté avec le forfait
+          ccrfCode:
+            - '21a'
           reponseconsoCode:
             - '447'
             - '464'
@@ -229,21 +248,31 @@
       tags:
         - DemarchageADomicile
     - title: Démarchage téléphonique
-      ccrfCode: -'227'
+      ccrfCode: 
+        - '227'
       companyKind: PHONE
       reponseconsoCode:
         - '221'
       tags:
         - DemarchageTelephonique
     - title: Problème avec un site internet
+      ccrfCode:
+        - '220'
       reponseconsoCode:
         - '4442'
       companyKind: WEBSITE
     - title: Autre
+      ccrfCode:
+        - '23b'
       reponseconsoCode:
         - '443'
         - '446'
 - title: Abonnement presse
+  reponseconsoCode:
+    - '442'
+    - '230'
+  tags:
+    - ReponseConso
   subcategories:
     - title: Démarchage à domicile
       ccrfCode:
@@ -254,23 +283,23 @@
       tags:
         - DemarchageADomicile
     - title: Démarchage téléphonique
-      ccrfCode: -'227'
+      ccrfCode: 
+        - '227'
       companyKind: PHONE
       reponseconsoCode:
         - '221'
       tags:
         - DemarchageTelephonique
     - title: Problème avec un site internet
+      ccrfCode:
+        - '221'
       reponseconsoCode:
         - '443'
         - '446'
       companyKind: WEBSITE
     - title: Autre
-  reponseconsoCode:
-    - '442'
-    - '230'
-  tags:
-    - ReponseConso
+      ccrfCode:
+        - '23b'
 - title: Produit dangereux
   example: 'Exemple : téléphone, accessoire'
   tags:
@@ -292,5 +321,7 @@
       tags:
         - ProduitIndustriel
 - title: Autre
+  ccrfCode:
+    - '23b'
   reponseconsoCode:
     - '679'
